@@ -35,18 +35,45 @@
     blocks: {name:"Кладка", svg:'<svg viewBox="0 0 150 96" fill="currentColor"><rect x="20" y="60" width="14" height="14"/><rect x="38" y="60" width="14" height="14"/><rect x="56" y="60" width="14" height="14"/><rect x="74" y="60" width="14" height="14"/><rect x="92" y="60" width="14" height="14"/><rect x="110" y="60" width="14" height="14"/><rect x="20" y="42" width="14" height="14"/><rect x="56" y="42" width="14" height="14"/><rect x="92" y="42" width="14" height="14"/><rect x="20" y="24" width="14" height="14" fill="var(--accent)"/><rect x="56" y="24" width="14" height="14" fill="var(--accent)"/><rect x="92" y="24" width="14" height="14" fill="var(--accent)"/><rect x="20" y="78" width="104" height="4"/></svg>'}
   };
 
-  window.SITE_LOGOS = L; window.SITE_PALETTES = M;
+  var N = {
+    sis:    {name:"Система Информационных Сервисов", abbr:"СИС",  sub:"разработка · обучение · продвижение", ooo:"Система Информационных Сервисов"},
+    sisdev: {name:"СиС Разработка",                  abbr:"СиС",  sub:"группа компаний СиС · разработка · академия · сообщества", ooo:"СиС Разработка"},
+    sisrv:  {name:"Системы и Сервисы",               abbr:"СиС",  sub:"разработка · академия · сообщества", ooo:"Системы и Сервисы"},
+    piter:  {name:"Питер СиС",                       abbr:"ПС",   sub:"разработка · обучение · продвижение", ooo:"Питер СиС"},
+    rusis:  {name:"РуСиС",                           abbr:"РС",   sub:"разработка · обучение · продвижение", ooo:"РуСиС"},
+    rossis: {name:"РосСиС",                          abbr:"РС",   sub:"разработка · обучение · продвижение", ooo:"РосСиС"},
+    delno:  {name:"Дельно Разработка",               abbr:"Д",    sub:"группа компаний Дельно · разработка · академия · сообщества", ooo:"Дельно Разработка"},
+    verf:   {name:"Невская верфь",                   abbr:"НВ",   sub:"разработка · академия · сообщества", ooo:"Невская верфь"},
+    ceh:    {name:"Цифровой цех",                    abbr:"ЦЦ",   sub:"разработка · обучение · продвижение", ooo:"Цифровой цех"},
+    tolk:   {name:"Толк",                            abbr:"Т",    sub:"разработка · академия · сообщества", ooo:"Толк"},
+    lociya: {name:"Лоция",                           abbr:"Л",    sub:"разработка · академия · сообщества", ooo:"Лоция"},
+    prikl:  {name:"Прикладные системы",              abbr:"ПС",   sub:"разработка · обучение · продвижение", ooo:"Прикладные системы"}
+  };
+  window.SITE_LOGOS = L; window.SITE_PALETTES = M; window.SITE_NAMES = N;
   var css = '.pal-btn{position:fixed;right:14px;bottom:14px;z-index:60;width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,0,0,.25);background:rgba(255,255,255,.6);backdrop-filter:blur(6px);cursor:pointer;opacity:.35;transition:opacity .2s;display:grid;place-items:center;padding:0}'+
     '.pal-btn:hover,.pal-btn.open{opacity:1}.pal-btn i{width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,#222 50%,#a8824f 50%);display:block}'+
     '.pal{position:fixed;right:14px;bottom:56px;z-index:60;background:#1a1a1a;color:#eee;font:13px/1.3 -apple-system,Inter,Arial,sans-serif;padding:8px;border-radius:8px;display:none;gap:4px;box-shadow:0 8px 30px rgba(0,0,0,.35);min-width:270px;max-height:80vh;overflow:auto}'+
-    '.pal.open{display:flex;flex-direction:column}.pal h6{margin:6px 10px 2px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#888;font-weight:600}'+
+    '.pal.open{display:grid;grid-template-columns:auto auto auto;gap:2px 10px;align-items:start;min-width:0}.pal h6{grid-column:1/-1}.pal button{white-space:nowrap}@media(max-width:800px){.pal.open{grid-template-columns:1fr}}.pal h6{margin:6px 10px 2px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#888;font-weight:600}'+
     '.pal button{font:inherit;background:transparent;color:#eee;border:1px solid transparent;padding:6px 10px;border-radius:5px;cursor:pointer;display:flex;align-items:center;gap:8px;text-align:left}'+
     '.pal button:hover{background:#2a2a2a}.pal button.on{border-color:#666;background:#2a2a2a}.pal i{display:inline-block;width:12px;height:12px;border-radius:2px;border:1px solid rgba(255,255,255,.3);flex:none}'+
     '.pal .lg{width:18px;height:18px;flex:none;color:#eee}.pal .lg svg{width:100%;height:100%}'+
     '.mark.svg{border:0!important;background:transparent!important;width:auto!important;height:40px!important;color:inherit!important;display:block!important}.mark.svg svg{height:100%;width:auto;display:block}'+
     'html.logo-text header .mark{display:none!important}';
 
-  function apply(pk, lk){
+  function applyName(nk){
+    var n = N[nk]||N.sis;
+    document.querySelectorAll('header .logo > span:last-child').forEach(function(e){
+      if(!e.dataset.orig) e.dataset.orig = e.innerHTML;
+      var sm = e.querySelector('small');
+      e.innerHTML = n.name + (sm ? '<small>'+n.sub+'</small>' : '');
+    });
+    document.querySelectorAll('footer').forEach(function(f){
+      if(!f.dataset.orig) f.dataset.orig = f.innerHTML;
+      f.innerHTML = f.dataset.orig.split('Система Информационных Сервисов').join(n.ooo);
+    });
+    document.querySelectorAll('header .mark:not(.svg)').forEach(function(m){ if(m.dataset.orig!==undefined) m.textContent = n.abbr; else { m.dataset.orig = m.innerHTML; m.textContent = n.abbr; } });
+  }
+  function apply(pk, lk, nk){
     var p = M[pk]||M.classic, r = roles(p), st = document.documentElement.style, map = window.PALMAP||{};
     for (var v in map) st.setProperty(v, r[map[v]]);
     var l = L[lk]||L.box;
@@ -55,31 +82,35 @@
       if(l.svg){ m.classList.add('svg'); m.innerHTML = l.svg; }
       else { m.classList.remove('svg'); m.innerHTML = m.dataset.orig; }
     });
+    applyName(nk);
     document.documentElement.classList.toggle('logo-text', lk==='text');
     document.querySelectorAll('.pal button').forEach(function(b){
       if(b.dataset.p) b.classList.toggle('on', b.dataset.p===pk);
       if(b.dataset.l) b.classList.toggle('on', b.dataset.l===lk);
+      if(b.dataset.n) b.classList.toggle('on', b.dataset.n===nk);
     });
-    try{localStorage.setItem('pal',pk);localStorage.setItem('logo',lk)}catch(e){}
-    return [pk,lk];
+    try{localStorage.setItem('pal',pk);localStorage.setItem('logo',lk);localStorage.setItem('nm',nk)}catch(e){}
+    return [pk,lk,nk];
   }
 
   document.addEventListener('DOMContentLoaded', function(){
     var s=document.createElement('style'); s.textContent=css; document.head.appendChild(s);
-    var cur = {p:'classic', l:'layers'};
-    var h = location.hash.slice(1).split(','); if(M[h[0]]) cur.p=h[0]; if(h[1]&&L[h[1]]) cur.l=h[1];
-    if(!location.hash){ try{ var sp=localStorage.getItem('pal'), sl=localStorage.getItem('logo'); if(M[sp])cur.p=sp; if(L[sl])cur.l=sl; }catch(e){} }
+    var cur = {p:'classic', l:'layers', n:'sis'};
+    var h = location.hash.slice(1).split(','); if(M[h[0]]) cur.p=h[0]; if(h[1]&&L[h[1]]) cur.l=h[1]; if(h[2]&&N[h[2]]) cur.n=h[2];
+    if(!location.hash){ try{ var sp=localStorage.getItem('pal'), sl=localStorage.getItem('logo'), sn=localStorage.getItem('nm'); if(M[sp])cur.p=sp; if(L[sl])cur.l=sl; if(N[sn])cur.n=sn; }catch(e){} }
     var btn=document.createElement('button'); btn.className='pal-btn'; btn.title='Гамма и логотип (клавиша G)'; btn.innerHTML='<i></i>';
     var bar=document.createElement('div'); bar.className='pal';
+    var hn=document.createElement('h6'); hn.textContent='Название'; bar.appendChild(hn);
+    for(var k0 in N){ var b0=document.createElement('button'); b0.dataset.n=k0; b0.textContent=N[k0].name; b0.onclick=(function(k){return function(){cur.n=k;apply(cur.p,cur.l,cur.n)}})(k0); bar.appendChild(b0); }
     var hp=document.createElement('h6'); hp.textContent='Гамма'; bar.appendChild(hp);
-    for(var k in M){ var r=roles(M[k]); var b=document.createElement('button'); b.dataset.p=k; b.innerHTML='<i style="background:'+r.lbg+'"></i><i style="background:'+r.acc+'"></i>'+M[k].name; b.onclick=(function(k){return function(){cur.p=k;apply(cur.p,cur.l)}})(k); bar.appendChild(b); }
+    for(var k in M){ var r=roles(M[k]); var b=document.createElement('button'); b.dataset.p=k; b.innerHTML='<i style="background:'+r.lbg+'"></i><i style="background:'+r.acc+'"></i>'+M[k].name; b.onclick=(function(k){return function(){cur.p=k;apply(cur.p,cur.l,cur.n)}})(k); bar.appendChild(b); }
     var hl=document.createElement('h6'); hl.textContent='Логотип'; bar.appendChild(hl);
-    for(var k2 in L){ var b2=document.createElement('button'); b2.dataset.l=k2; b2.innerHTML='<span class="lg">'+(L[k2].svg||'')+'</span>'+L[k2].name; b2.onclick=(function(k){return function(){cur.l=k;apply(cur.p,cur.l)}})(k2); bar.appendChild(b2); }
+    for(var k2 in L){ var b2=document.createElement('button'); b2.dataset.l=k2; b2.innerHTML='<span class="lg">'+(L[k2].svg||'')+'</span>'+L[k2].name; b2.onclick=(function(k){return function(){cur.l=k;apply(cur.p,cur.l,cur.n)}})(k2); bar.appendChild(b2); }
     function toggle(on){ if(on===undefined) on=!bar.classList.contains('open'); bar.classList.toggle('open',on); btn.classList.toggle('open',on); }
     btn.onclick=function(){toggle()};
     document.addEventListener('keydown',function(e){ if((e.key==='g'||e.key==='п')&&!/input|textarea/i.test(e.target.tagName)) toggle(); });
     document.addEventListener('click',function(e){ if(!bar.contains(e.target)&&!btn.contains(e.target)) toggle(false); });
     document.body.appendChild(bar); document.body.appendChild(btn);
-    apply(cur.p,cur.l);
+    apply(cur.p,cur.l,cur.n);
   });
 })();
