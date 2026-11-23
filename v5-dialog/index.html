@@ -36,7 +36,7 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 9
 .talk{padding:70px 0 60px}
 .talk .intro{max-width:720px;margin-bottom:36px}
 .talk .intro p{color:var(--ink2);font-size:19px}
-.step{display:none;margin-bottom:34px;animation:up .5s ease}
+.step{display:none;margin-bottom:34px;animation:up .5s ease;scroll-margin-top:96px;scroll-margin-bottom:28px}
 .step.on{display:block}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .q{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
@@ -91,7 +91,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--ink2);text-decoration:none}
 </style>
 <script>window.PALMAP={"--bg":"lbg","--bg2":"lbg2","--paper":"lpaper","--ink":"link","--ink2":"link2","--mute":"lmute","--line":"lline","--accent":"acc","--accent2":"acc2","--btn-ink":"btnink","--cta-bg":"dbg","--cta-ink":"dink","--cta-mute":"dmute","--cta-text":"dink2","--cta-input":"dpanel","--cta-border":"dline"};</script>
-<script src="../palette.js?v=202611231632"></script>
+<script src="../palette.js?v=202611231637"></script>
 </head>
 <body>
 
@@ -206,7 +206,11 @@ var A={
  other:["Разберёмся на разговоре","Опишете подробнее по телефону, и мы скажем, что сделали бы на вашем месте, что из этого стоит делать первым и сколько это занимает.","Первый разговор бесплатный, в день обращения."]
 };
 var ans={};
-function show(n){var s=document.getElementById('s'+n);s.classList.add('on');setTimeout(function(){s.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+function show(n){var s=document.getElementById('s'+n);s.classList.add('on');setTimeout(function(){
+  var r=s.getBoundingClientRect(),h=window.innerHeight,top=96;
+  if(r.bottom>h-28){ /* показать блок целиком, но не выше чем на 96px от верха */
+    var want=Math.min(r.bottom-h+28, r.top-top); if(want>0) window.scrollBy({top:want,behavior:'smooth'}); }
+},80)}
 document.querySelectorAll('.chips').forEach(function(c){c.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;c.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});b.classList.add('on');pick(+c.dataset.step,b.dataset.v,b.textContent)})});
 function other(f,n){var v=f.querySelector('input').value.trim();if(!v)return false;pick(n,'other',v);return false}
 function pick(n,v,label){ans[n]=label;if(n===1){show(2)}else{var a=A[v]||A.other;document.getElementById('ab').textContent=a[0];document.getElementById('ap').textContent=a[1];document.getElementById('as').textContent=a[2];document.getElementById('ans').style.display='flex';show(3)}}

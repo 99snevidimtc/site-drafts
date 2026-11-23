@@ -43,8 +43,21 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 9
 .card .head h3{margin:4px 0 0;font-weight:500;font-style:italic}
 .card .head .tog{margin-left:auto;flex:none;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--mute);font-size:18px;line-height:1;transition:transform .2s}
 .card.open .head .tog{transform:rotate(45deg);border-color:var(--accent);color:var(--accent)}
-.card .body{display:none;padding:0 28px 26px 78px;border-top:1px solid var(--line);margin-top:0}
-.card.open .body{display:block;animation:up .35s ease}
+.card .body{display:none}
+.sit{align-items:start}
+.card .head .tog{transition:transform .2s}
+.ov{position:fixed;inset:0;background:rgba(43,29,22,.45);z-index:40;display:none;align-items:center;justify-content:center;padding:20px}
+.ov.on{display:flex}
+.pop{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;max-width:680px;width:100%;max-height:90vh;overflow:auto;padding:32px 36px;position:relative;animation:up .25s ease;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.pop .x{position:absolute;right:14px;top:12px;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:22px;line-height:1;cursor:pointer;color:var(--mute)}
+.pop .x:hover{color:var(--ink);border-color:var(--ink)}
+.pop h3{font-style:italic;font-weight:500;font-size:24px;margin:0 36px 10px 0}
+.pop dl{margin:18px 0 0;display:grid;grid-template-columns:120px 1fr;gap:12px 16px;font-size:16px}
+.pop dt{color:var(--mute);font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding-top:3px}
+.pop dd{margin:0;color:var(--ink2)}
+.pop dd b{color:var(--ink)}
+.pop .btn{margin-top:22px}
+@media(max-width:600px){.pop{padding:26px 22px}.pop dl{grid-template-columns:1fr}}
 @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .card .body dl{margin:18px 0 0;display:grid;grid-template-columns:120px 1fr;gap:10px 16px;font-size:16px}
 .card .body dt{color:var(--mute);font-size:13px;text-transform:uppercase;letter-spacing:.1em;padding-top:3px}
@@ -87,7 +100,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--ink2);text-decoration:none}
 </style>
 <script>window.PALMAP={"--bg":"lbg","--bg2":"lbg2","--paper":"lpaper","--ink":"link","--ink2":"link2","--mute":"lmute","--line":"lline","--accent":"acc","--accent2":"acc2","--btn-ink":"btnink","--cta-bg":"dbg","--cta-ink":"dink","--cta-mute":"dmute","--cta-text":"dink2","--cta-input":"dpanel","--cta-border":"dline"};</script>
-<script src="../palette.js?v=202611231632"></script>
+<script src="../palette.js?v=202611231637"></script>
 </head>
 <body>
 
@@ -197,8 +210,17 @@ footer a{color:var(--ink2);text-decoration:none}
   <div><a href="#">Политика обработки персональных данных</a><br><a href="#">Реквизиты</a></div>
 </div></footer>
 
+<div class="ov" id="ov"><div class="pop" role="dialog"><button class="x" aria-label="Закрыть" onclick="closePop()">×</button><div id="popc"></div></div></div>
+
 <script>
-document.querySelectorAll('.card .head').forEach(function(h){h.addEventListener('click',function(){var c=h.parentNode,was=c.classList.contains('open');document.querySelectorAll('.card.open').forEach(function(x){x.classList.remove('open')});if(!was)c.classList.add('open')})});
+document.querySelectorAll('.card .head').forEach(function(h){h.addEventListener('click',function(){
+  var c=h.parentNode; document.getElementById('popc').innerHTML='<h3>'+h.querySelector('h3').textContent+'</h3>'+c.querySelector('.body').innerHTML;
+  document.getElementById('ov').classList.add('on'); document.body.style.overflow='hidden';
+  document.querySelectorAll('#popc [data-sit]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('task').value=a.dataset.sit+': ';closePop()})});
+})});
+function closePop(){document.getElementById('ov').classList.remove('on');document.body.style.overflow=''}
+document.getElementById('ov').addEventListener('click',function(e){if(e.target===this)closePop()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop()});
 document.querySelectorAll('[data-sit]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('task').value=a.dataset.sit+': '})});
 function ok(f){f.reset();f.nextElementSibling.style.display='block';return false}
 </script>
