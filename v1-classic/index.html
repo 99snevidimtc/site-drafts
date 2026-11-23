@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Система Информационных Сервисов — разработка приложений, сайтов и ботов</title>
+<meta name="description" content="Мобильные приложения, сайты и боты под задачу вашего бизнеса. Письменная оценка до начала работ, один ответственный, результат по этапам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6; --bg2:#ebe3d6; --paper:#fbf8f2;
+  --ink:#2b1d16; --ink2:#5a463b; --mute:#8a7768;
+  --line:#d9cdbb; --accent:#a8824f; --accent2:#8b6a3c; --btn-ink:#fff;
+  --cta-bg:#2b1d16; --cta-ink:#efe7da; --cta-mute:#a3917f; --cta-text:#cdbfae; --cta-input:#3a2a21; --cta-border:#5d4a3e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(34px,5vw,56px)}
+h2{font-size:clamp(28px,3.4vw,40px)}
+h3{font-size:22px}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;border:1px solid var(--accent2);background:var(--accent);color:var(--btn-ink);padding:14px 26px;border-radius:4px;font-weight:600;text-decoration:none;cursor:pointer;font-size:16px;letter-spacing:.01em;transition:background .15s}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--accent2);font-weight:600;margin-bottom:14px}
+section{padding:84px 0}
+section + section{border-top:1px solid var(--line)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;min-height:72px;padding:8px 24px}
+.logo > span:last-child{white-space:nowrap}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Playfair Display",Georgia,serif;font-size:17px;font-weight:600}
+.mark{width:38px;height:38px;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:13px;letter-spacing:.06em;font-family:Inter,sans-serif;font-weight:600}
+.logo small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2);white-space:nowrap}
+.nav ul a:hover{color:var(--ink)}
+.nav .phone{font-weight:600;text-decoration:none;white-space:nowrap}
+.nav .lk{font-size:13px;color:var(--mute);text-decoration:none;border:1px dashed var(--line);padding:6px 10px;border-radius:4px}
+@media(max-width:900px){.nav ul,.nav .lk{display:none}}
+@media(max-width:600px){.logo > span:last-child{white-space:normal;font-size:14px;line-height:1.2}.nav{padding:8px 16px}.wrap{padding:0 16px}}
+
+/* hero */
+.hero{padding:96px 0 80px;text-align:center}
+.hero p.lead{font-size:20px;color:var(--ink2);max-width:720px;margin:0 auto 36px}
+.quick{display:flex;gap:10px;max-width:640px;margin:0 auto 14px;background:var(--paper);border:1px solid var(--line);padding:8px;border-radius:6px}
+.quick input{flex:1;border:0;background:transparent;font:inherit;font-size:17px;padding:10px 12px;outline:none;color:var(--ink)}
+.quick input::placeholder{color:var(--mute)}
+.hero .note{font-size:14px;color:var(--mute)}
+.hero .alt{margin-top:30px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:15px}
+.hero .alt a{color:var(--ink2)}
+@media(max-width:600px){.quick{flex-direction:column}}
+
+/* trust strip */
+.strip{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.strip .wrap{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:15px;color:var(--ink2)}
+.strip span::before{content:"— ";color:var(--accent)}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);padding:30px 28px;border-radius:6px;display:flex;flex-direction:column}
+.card .num{font-family:"Playfair Display",serif;color:var(--accent);font-size:15px;margin-bottom:14px}
+.card p{color:var(--ink2);font-size:16px;flex:1}
+.card .for{font-size:14px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
+.groups{margin-top:34px;display:flex;gap:24px;flex-wrap:wrap;font-size:15px;color:var(--ink2)}
+.groups b{color:var(--ink)}
+
+/* you / we */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.col h3{margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.col ul{list-style:none;padding:0;margin:0}
+.col li{padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+.col.we li::before{content:"✓";color:var(--accent2);font-weight:700;margin-right:10px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{position:relative;padding-top:18px;border-top:2px solid var(--ink)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:"Playfair Display",serif;color:var(--accent);font-size:30px;display:block;margin-bottom:8px}
+.step p{color:var(--ink2);font-size:16px}
+.step .t{font-size:13px;color:var(--mute)}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+@media(max-width:800px){.why{grid-template-columns:1fr}}
+.why div{padding:18px 0;border-bottom:1px solid var(--line)}
+.why b{display:block;margin-bottom:4px}
+.why span{color:var(--ink2);font-size:16px}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:800px){.cases{grid-template-columns:1fr}}
+.case{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.case .img{height:170px;background:repeating-linear-gradient(135deg,var(--bg2) 0 12px,var(--paper) 12px 24px);display:grid;place-items:center;color:var(--mute);font-size:14px}
+.case .b{padding:22px}
+.case .b small{color:var(--mute)}
+
+/* form */
+.cta{background:var(--cta-bg);color:var(--cta-ink)}
+.cta .eyebrow{color:var(--accent)}
+.cta h2{color:var(--cta-ink)}
+.cta p{color:var(--cta-text)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:28px}
+@media(max-width:640px){.form{grid-template-columns:1fr}}
+.form input,.form textarea{width:100%;font:inherit;font-size:16px;padding:14px;border:1px solid var(--cta-border);background:var(--cta-input);color:var(--cta-ink);border-radius:4px;outline:none}
+.form input::placeholder,.form textarea::placeholder{color:var(--cta-mute)}
+.form textarea{grid-column:1/-1;min-height:110px;resize:vertical}
+.form .row{grid-column:1/-1;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.form .row small{color:var(--cta-mute);font-size:13px}
+.contacts{display:flex;gap:40px;flex-wrap:wrap;margin-top:40px;font-size:16px}
+.contacts a{color:var(--cta-ink);text-decoration:none;border-bottom:1px solid var(--cta-border)}
+.contacts small{display:block;color:var(--cta-mute);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.ok{display:none;padding:18px;border:1px solid var(--accent);border-radius:4px;margin-top:16px;max-width:760px}
+
+footer{padding:34px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink2);text-decoration:none}
+
+/* появление блоков при прокрутке; без JS всё видно сразу; при «уменьшить движение» в системе выключено */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+</style>
+
+<script>window.PALMAP={"--bg":"lbg","--bg2":"lbg2","--paper":"lpaper","--ink":"link","--ink2":"link2","--mute":"lmute","--line":"lline","--accent":"acc","--accent2":"acc2","--btn-ink":"btnink","--cta-bg":"dbg","--cta-ink":"dink","--cta-mute":"dmute","--cta-text":"dink2","--cta-input":"dpanel","--cta-border":"dline"};</script>
+<script src="../palette.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="mark">СИС</span><span>Система Информационных Сервисов<small>разработка · обучение · продвижение</small></span></a>
+    <ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#how">Как работаем</a></li>
+      <li><a href="#why">Почему мы</a></li>
+      <li><a href="#cases">Работы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a class="phone" href="tel:+78120000000">+7 (812) [телефон]</a>
+    <a class="lk" href="#" title="Личный кабинет появится позже">Личный кабинет</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Разработка под задачу · Санкт-Петербург</div>
+    <h1>Вы описываете задачу.<br>Мы возвращаем готовое решение.</h1>
+    <p class="lead">Мобильные приложения, сайты и боты для бизнеса. Письменная оценка до начала работ, один ответственный за результат, показ по этапам.</p>
+    <form class="quick" onsubmit="return ok(this)">
+      <input type="text" name="c" placeholder="Телефон, почта или Telegram" required>
+      <button class="btn" type="submit">Обсудить задачу</button>
+    </form>
+    <div class="ok" style="margin:0 auto 14px">Спасибо. Перезвоним или напишем в течение рабочего дня.</div>
+    <div class="note">Перезвоним в течение рабочего дня. Оценка и первая консультация бесплатны.</div>
+    <div class="alt">
+      <a href="tel:+78120000000">Позвонить</a>
+      <a href="https://t.me/[аккаунт]">Написать в Telegram</a>
+      <a href="mailto:[почта]">Написать на почту</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Оценка в письменном виде</span>
+    <span>Договор и NDA до начала работ</span>
+    <span>Права на код у заказчика</span>
+    <span>Сопровождение после запуска</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Что мы делаем</div>
+    <h2>Один подрядчик на весь цифровой контур</h2>
+    <p style="max-width:680px;color:var(--ink2)">Берём задачу целиком: от разговора о бизнесе до запуска и поддержки. Если нужна только часть, делаем часть.</p>
+    <div class="grid" style="margin-top:36px">
+      <div class="card"><div class="num">01</div><h3>Мобильные приложения</h3><p>iOS и Android. Приложение для клиентов, для сотрудников, для партнёров. Публикация в магазинах и обновления.</p><div class="for">Для торговли, услуг, доставки, сервисных компаний</div></div>
+      <div class="card"><div class="num">02</div><h3>Сайты и веб-сервисы</h3><p>От витрины до личного кабинета с оплатой и интеграциями. Быстро открывается, находится в поиске, обновляется без программиста.</p><div class="for">Для компаний, которым нужен сайт как рабочий инструмент</div></div>
+      <div class="card"><div class="num">03</div><h3>Боты и автоматизация</h3><p>Telegram и другие мессенджеры: приём заказов, запись, ответы на вопросы, уведомления. Связываем с вашей учётной системой.</p><div class="for">Для тех, кто отвечает клиентам вручную и устал</div></div>
+      <div class="card"><div class="num">04</div><h3>Обучение</h3><p>Курсы для сотрудников и для рынка: по нашим рабочим правилам, с практикой. Готовим людей под конкретные задачи.</p><div class="for">Для компаний, которым нужны кадры под свой порядок</div></div>
+      <div class="card"><div class="num">05</div><h3>Сообщества и вовлечение</h3><p>Собираем вокруг вашего продукта людей, которым он нужен: мероприятия, площадки, обратная связь.</p><div class="for">Для продуктов, которым нужны живые пользователи</div></div>
+      <div class="card"><div class="num">06</div><h3>Продвижение</h3><p>Чтобы сделанное нашли: поиск, магазины приложений, реклама. Считаем деньги, а не просмотры.</p><div class="for">Для всего, что мы сделали, и не только</div></div>
+    </div>
+    <div class="groups"><span><b>Разработка</b> 01–03</span><span><b>Обучение</b> 04</span><span><b>Продвижение</b> 05–06</span><span style="color:var(--mute)">Три направления, одна группа компаний</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Разделение труда</div>
+    <h2>Вам не нужно разбираться в технологиях</h2>
+    <div class="split" style="margin-top:30px">
+      <div class="col you">
+        <h3>Что делаете вы</h3>
+        <ul>
+          <li>Рассказываете, как устроен ваш бизнес и что мешает</li>
+          <li>Отвечаете на вопросы на обследовании, один-два разговора</li>
+          <li>Смотрите результат на каждом этапе и говорите, что не так</li>
+          <li>Принимаете работу</li>
+        </ul>
+      </div>
+      <div class="col we">
+        <h3>Что делаем мы</h3>
+        <ul>
+          <li>Переводим задачу на язык требований и пишем их понятным текстом</li>
+          <li>Называем срок и стоимость письменно и отвечаем за них</li>
+          <li>Проектируем, разрабатываем, проверяем, выпускаем</li>
+          <li>Сопровождаем после запуска и развиваем по вашим заявкам</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">Порядок работы</div>
+    <h2>Четыре шага от разговора до запуска</h2>
+    <div class="steps" style="margin-top:36px">
+      <div class="step"><h3>Разговор</h3><p>Полчаса о вашей задаче. Говорим, что можно сделать и что не нужно делать.</p><div class="t">Бесплатно, в день обращения</div></div>
+      <div class="step"><h3>Обследование и оценка</h3><p>Описываем, что будет сделано, по этапам. Срок и стоимость в письменном виде.</p><div class="t">Несколько дней</div></div>
+      <div class="step"><h3>Разработка по этапам</h3><p>Каждый этап заканчивается показом работающего результата. Меняете направление, пока не поздно.</p><div class="t">Этапы по две-три недели</div></div>
+      <div class="step"><h3>Запуск и сопровождение</h3><p>Публикуем, обучаем ваших людей, остаёмся на связи. Доработки по заявкам.</p><div class="t">По договору сопровождения</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Почему с нами спокойно</div>
+    <h2>Правила, которые мы не нарушаем</h2>
+    <div class="why" style="margin-top:28px">
+      <div><b>Срок называем только после оценки</b><span>Никаких «примерно месяц» по телефону. Оценка письменная, за неё отвечает руководитель.</span></div>
+      <div><b>Один ответственный</b><span>У вас один человек на связи от первого разговора до сдачи. Он знает ваш проект целиком.</span></div>
+      <div><b>Результат видно каждые две-три недели</b><span>Не отчёт, а работающая часть продукта, которую можно потрогать.</span></div>
+      <div><b>Код и права принадлежат вам</b><span>Исходники передаются по договору. Уйти от нас можно в любой момент, и всё продолжит работать.</span></div>
+      <div><b>Проверка качества отдельными людьми</b><span>Тестировщик не подчиняется программисту. Найденный дефект имеет приоритет над новой работой.</span></div>
+      <div><b>Письменная фиксация</b><span>Все договорённости в задачах и письмах. Через год можно поднять, кто и что решил.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Работы</div>
+    <h2>Примеры задач, которые мы решали</h2>
+    <div class="cases" style="margin-top:36px">
+      <div class="case"><div class="img">[изображение кейса]</div><div class="b"><h3>[Название проекта]</h3><p>Задача: [что мешало клиенту]. Решение: [что сделали]. Результат: [цифра].</p><small>Мобильное приложение · [отрасль]</small></div></div>
+      <div class="case"><div class="img">[изображение кейса]</div><div class="b"><h3>[Название проекта]</h3><p>Задача: [что мешало клиенту]. Решение: [что сделали]. Результат: [цифра].</p><small>Сайт и личный кабинет · [отрасль]</small></div></div>
+      <div class="case"><div class="img">[изображение кейса]</div><div class="b"><h3>[Название проекта]</h3><p>Задача: [что мешало клиенту]. Решение: [что сделали]. Результат: [цифра].</p><small>Telegram-бот · [отрасль]</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Один шаг</div>
+    <h2>Опишите задачу своими словами</h2>
+    <p style="max-width:640px">Не нужно техническое задание. Достаточно двух фраз: что у вас за бизнес и что должно стать лучше. Остальное спросим сами.</p>
+    <form class="form" onsubmit="return ok(this)">
+      <input type="text" name="name" placeholder="Как к вам обращаться" required>
+      <input type="text" name="c" placeholder="Телефон, почта или Telegram" required>
+      <textarea name="task" placeholder="Что должно стать лучше (необязательно)"></textarea>
+      <div class="row"><button class="btn" type="submit">Отправить</button><small>Нажимая кнопку, вы соглашаетесь с <a href="#" style="color:var(--cta-text)">политикой обработки данных</a>.</small></div>
+    </form>
+    <div class="ok">Спасибо. Мы получили заявку и свяжемся с вами в течение рабочего дня.</div>
+    <div class="contacts">
+      <div><small>Телефон</small><a href="tel:+78120000000">+7 (812) [телефон]</a></div>
+      <div><small>Почта</small><a href="mailto:[почта]">[почта]</a></div>
+      <div><small>Telegram</small><a href="https://t.me/[аккаунт]">@[аккаунт]</a></div>
+      <div><small>Офис</small><span>Санкт-Петербург, [адрес]</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>ООО «Система Информационных Сервисов» · ИНН [ИНН] · Санкт-Петербург<br>Входит в группу компаний [название группы]: разработка, обучение, продвижение.</div>
+    <div><a href="#">Политика обработки персональных данных</a><br><a href="#">Реквизиты</a></div>
+  </div>
+</footer>
+
+<script>
+function ok(f){var m=f.parentNode.querySelector('.ok')||document.querySelector('.ok');f.reset();m.style.display='block';m.scrollIntoView({block:'nearest'});return false}
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var sel='section .eyebrow,section h2,section > .wrap > p,.card,.row,.tr,.step,.why > div,.case,.box,.col,.two > div,.facts,.strip .wrap,.form,.panel,.contacts,.groups,.list,.table,.h';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(e){e.classList.add('rv')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){
+    var e=x.target,sib=[].slice.call(e.parentNode.children).filter(function(c){return c.classList.contains('rv')}),i=sib.indexOf(e);
+    e.style.transitionDelay=(Math.min(i,6)*70)+'ms';e.classList.add('in');io.unobserve(e)}})},{rootMargin:'0px 0px -8% 0px',threshold:.1});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

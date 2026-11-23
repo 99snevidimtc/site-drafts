@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Визитки — образцы</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Визитка 90 × 50 мм, вылет 3 мм → 96 × 56 мм. Палитра «Классика»: бежевый, тёмно-коричневый, латунь.
+   Контакты вымышленные, заменить перед печатью. */
+@page{size:A4 portrait;margin:12mm}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#222;font-family:Inter,sans-serif;font-size:10pt}
+.sheet{width:186mm;margin:0 auto;page-break-after:always}
+.sheet:last-child{page-break-after:auto}
+.title{font-size:9pt;color:#777;margin:0 0 4mm;display:flex;justify-content:space-between}
+.pair{display:grid;grid-template-columns:96mm 96mm;gap:0 6mm;margin-bottom:8mm;page-break-inside:avoid}
+.cut{position:relative;width:96mm;height:56mm}
+.cut::before,.cut::after{content:"";position:absolute;pointer-events:none}
+.cut::before{left:3mm;right:3mm;top:-3mm;bottom:-3mm;border-left:.2pt solid #999;border-right:.2pt solid #999}
+.cut::after{top:3mm;bottom:3mm;left:-3mm;right:-3mm;border-top:.2pt solid #999;border-bottom:.2pt solid #999}
+.card{width:96mm;height:56mm;padding:8mm 9mm;position:relative;overflow:hidden;display:flex;flex-direction:column;background:#f4efe6;color:#2b1d16}
+.mark{width:9mm;height:9mm;border:.5pt solid #2b1d16;display:grid;place-items:center;font-size:6.5pt;letter-spacing:.04em;font-weight:600;margin-bottom:4.5mm}
+.name{font-family:"Playfair Display",serif;font-size:14pt;font-weight:600;line-height:1.15}
+.role{font-size:8.5pt;color:#8a7768;margin-top:1mm}
+.co{margin-top:auto;font-family:"Playfair Display",serif;font-size:10pt}
+.co small{display:block;font-family:Inter,sans-serif;font-size:6pt;letter-spacing:.12em;text-transform:uppercase;color:#a8824f;margin-top:1mm}
+.back{background:#2b1d16;color:#efe7da;justify-content:center}
+.back .line{width:10mm;height:.6pt;background:#a8824f;margin-bottom:4mm}
+.c{display:grid;gap:1.3mm;font-size:8.5pt}
+.c span{display:block}
+.c small{text-transform:uppercase;letter-spacing:.1em;font-size:6pt;display:inline-block;width:14mm;opacity:.6}
+.c b{font-weight:500;color:#fff}
+/* вариант группы: марка заливкой */
+.g .mark{background:#2b1d16;color:#f4efe6;border:0}
+@media screen{body{padding:10mm;background:#ddd}.sheet{background:#fff;padding:12mm;margin-bottom:10mm}}
+</style>
+</head>
+<body>
+
+<!-- ===== Вариант «СиС Разработка» (группа компаний СиС) ===== -->
+<div class="sheet g">
+  <p class="title"><span>Визитки 90 × 50 мм, вылет 3 мм. Слева лицо, справа оборот.</span><span>Название: СиС Разработка</span></p>
+
+  <div class="pair">
+    <div class="cut"><div class="card">
+      <div class="mark">СиС</div>
+      <div class="name">Андрей<br>Соколов</div>
+      <div class="role">Генеральный директор</div>
+      <div class="co">СиС Разработка<small>Группа компаний СиС · разработка · академия · сообщества</small></div>
+    </div></div>
+    <div class="cut"><div class="card back">
+      <div class="line"></div>
+      <div class="c">
+        <span><small>Моб.</small><b>+7 921 000-01-01</b></span>
+        <span><small>Тел.</small><b>+7 (812) 000-01-00</b></span>
+        <span><small>Почта</small><b>a.sokolov@sis-dev.ru</b></span>
+        <span><small>Telegram</small><b>@sis_dev</b></span>
+        <span><small>Сайт</small><b>sis-dev.ru</b></span>
+        <span><small>Адрес</small>Санкт-Петербург, наб. реки Фонтанки, 00</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="pair">
+    <div class="cut"><div class="card">
+      <div class="mark">СиС</div>
+      <div class="name">Павел<br>Орлов</div>
+      <div class="role">Заместитель генерального директора</div>
+      <div class="co">СиС Разработка<small>Группа компаний СиС · разработка · академия · сообщества</small></div>
+    </div></div>
+    <div class="cut"><div class="card back">
+      <div class="line"></div>
+      <div class="c">
+        <span><small>Моб.</small><b>+7 921 000-01-02</b></span>
+        <span><small>Тел.</small><b>+7 (812) 000-01-00</b></span>
+        <span><small>Почта</small><b>p.orlov@sis-dev.ru</b></span>
+        <span><small>Telegram</small><b>@sis_dev</b></span>
+        <span><small>Сайт</small><b>sis-dev.ru</b></span>
+        <span><small>Адрес</small>Санкт-Петербург, наб. реки Фонтанки, 00</span>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ===== Вариант «Система Информационных Сервисов» ===== -->
+<div class="sheet">
+  <p class="title"><span>Визитки 90 × 50 мм, вылет 3 мм. Слева лицо, справа оборот.</span><span>Название: Система Информационных Сервисов</span></p>
+
+  <div class="pair">
+    <div class="cut"><div class="card">
+      <div class="mark">СИС</div>
+      <div class="name">Андрей<br>Соколов</div>
+      <div class="role">Генеральный директор</div>
+      <div class="co">Система Информационных Сервисов<small>разработка · обучение · продвижение</small></div>
+    </div></div>
+    <div class="cut"><div class="card back">
+      <div class="line"></div>
+      <div class="c">
+        <span><small>Моб.</small><b>+7 921 000-01-01</b></span>
+        <span><small>Тел.</small><b>+7 (812) 000-01-00</b></span>
+        <span><small>Почта</small><b>a.sokolov@sis-spb.ru</b></span>
+        <span><small>Telegram</small><b>@sis_spb</b></span>
+        <span><small>Сайт</small><b>sis-spb.ru</b></span>
+        <span><small>Адрес</small>Санкт-Петербург, наб. реки Фонтанки, 00</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="pair">
+    <div class="cut"><div class="card">
+      <div class="mark">СИС</div>
+      <div class="name">Павел<br>Орлов</div>
+      <div class="role">Заместитель генерального директора</div>
+      <div class="co">Система Информационных Сервисов<small>разработка · обучение · продвижение</small></div>
+    </div></div>
+    <div class="cut"><div class="card back">
+      <div class="line"></div>
+      <div class="c">
+        <span><small>Моб.</small><b>+7 921 000-01-02</b></span>
+        <span><small>Тел.</small><b>+7 (812) 000-01-00</b></span>
+        <span><small>Почта</small><b>p.orlov@sis-spb.ru</b></span>
+        <span><small>Telegram</small><b>@sis_spb</b></span>
+        <span><small>Сайт</small><b>sis-spb.ru</b></span>
+        <span><small>Адрес</small>Санкт-Петербург, наб. реки Фонтанки, 00</span>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+</body>
+</html>

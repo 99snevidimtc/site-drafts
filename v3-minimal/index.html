@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Система Информационных Сервисов — разработка под задачу</title>
+<meta name="description" content="Мобильные приложения, сайты и боты для бизнеса. Письменная оценка, один ответственный, результат по этапам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf6; --bg2:#f1ede4;
+  --ink:#22201c; --ink2:#55504a; --mute:#8d867c;
+  --line:#dcd6ca; --accent:#6b4f3a; --btn-ink:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6}
+h1,h2{font-family:"IBM Plex Serif",Georgia,serif;font-weight:500;line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(40px,6vw,72px)}
+h2{font-size:clamp(30px,3.6vw,44px)}
+h3{font-size:19px;font-weight:600;margin:0 0 .4em}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:15px 28px;border:1px solid var(--ink);border-radius:2px;font-weight:600;text-decoration:none;cursor:pointer;font-size:16px;font-family:inherit}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:var(--btn-ink)}
+.eyebrow{font-size:13px;color:var(--mute);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+section{padding:100px 0}
+.rule{height:1px;background:var(--line)}
+.h{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start}
+@media(max-width:800px){.h{grid-template-columns:1fr;gap:10px}}
+
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:30px;min-height:70px;padding:8px 28px}
+.logo > span:last-child{white-space:nowrap}
+.logo{text-decoration:none;font-family:"IBM Plex Serif",serif;font-size:18px;display:flex;align-items:center;gap:12px}
+.mark{width:10px;height:28px;background:var(--accent)}
+.logo small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:11px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink2);white-space:nowrap}
+.nav ul a:hover{color:var(--ink)}
+.nav .phone{text-decoration:none;font-weight:600;white-space:nowrap}
+.nav .lk{font-size:13px;color:var(--mute);text-decoration:none}
+@media(max-width:900px){.nav ul,.nav .lk{display:none}}
+@media(max-width:600px){.logo > span:last-child{white-space:normal;font-size:14px;line-height:1.2}.nav{padding:8px 16px}.wrap{padding:0 16px}}
+
+.hero{padding:120px 0 90px}
+.hero h1{max-width:900px}
+.hero .lead{font-size:21px;color:var(--ink2);max-width:640px;margin:28px 0 44px}
+.quick{display:flex;gap:0;max-width:600px;border-bottom:2px solid var(--ink)}
+.quick input{flex:1;border:0;background:transparent;font:inherit;font-size:19px;padding:12px 0;outline:none;color:var(--ink)}
+.quick input::placeholder{color:var(--mute)}
+.quick button{background:none;border:0;font:inherit;font-weight:600;font-size:16px;cursor:pointer;padding:12px 0 12px 16px;color:var(--ink);white-space:nowrap}
+.quick button::after{content:" →"}
+.quick button:hover{color:var(--accent)}
+.hero .note{font-size:14px;color:var(--mute);margin-top:12px}
+.hero .alt{margin-top:36px;display:flex;gap:28px;flex-wrap:wrap;font-size:15px;color:var(--ink2)}
+.hero .alt a{text-decoration:none;border-bottom:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:70px;padding-top:28px;border-top:1px solid var(--line);font-size:15px;color:var(--ink2)}
+@media(max-width:800px){.facts{grid-template-columns:1fr 1fr}}
+.facts b{display:block;color:var(--ink);font-weight:600}
+
+.table{border-top:1px solid var(--ink)}
+.tr{display:grid;grid-template-columns:48px 1fr 1.5fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}
+@media(max-width:700px){.tr{grid-template-columns:40px 1fr}.tr .d{grid-column:2}}
+.tr .n{font-family:"IBM Plex Serif",serif;color:var(--accent);font-size:17px;padding-top:2px}
+.tr .tag{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.1em}
+.tr .d{color:var(--ink2);font-size:16px}
+.tr .d small{display:block;color:var(--mute);font-size:14px;margin-top:8px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+@media(max-width:800px){.two{grid-template-columns:1fr;gap:30px}}
+.two h3{padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:6px}
+.two ol{margin:0;padding-left:22px;color:var(--ink2)}
+.two li{padding:9px 0;border-bottom:1px solid var(--line)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:"IBM Plex Serif",serif;font-size:40px;color:var(--line);display:block;line-height:1;margin-bottom:14px}
+.step p{color:var(--ink2);font-size:16px}
+.step .t{font-size:13px;color:var(--mute)}
+
+.why{columns:2;column-gap:60px}
+@media(max-width:800px){.why{columns:1}}
+.why div{break-inside:avoid;padding:16px 0;border-bottom:1px solid var(--line)}
+.why b{display:block;font-weight:600}
+.why span{color:var(--ink2);font-size:16px}
+
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media(max-width:800px){.cases{grid-template-columns:1fr}}
+.case .img{height:200px;background:var(--bg2);display:grid;place-items:center;color:var(--mute);font-size:14px;margin-bottom:16px}
+.case p{color:var(--ink2);font-size:15px}
+.case small{color:var(--mute)}
+
+.cta{background:var(--bg2);border-top:1px solid var(--line)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;max-width:720px;margin-top:30px}
+@media(max-width:640px){.form{grid-template-columns:1fr}}
+.form input,.form textarea{width:100%;font:inherit;font-size:17px;padding:12px 0;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink);outline:none;border-radius:0}
+.form input::placeholder,.form textarea::placeholder{color:var(--mute)}
+.form textarea{grid-column:1/-1;min-height:70px;resize:vertical}
+.form .row{grid-column:1/-1;display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:8px}
+.form .row small{color:var(--mute);font-size:13px}
+.contacts{display:flex;gap:48px;flex-wrap:wrap;margin-top:56px}
+.contacts a{text-decoration:none;font-weight:600;font-size:17px}
+.contacts small{display:block;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.ok{display:none;padding:14px 0;border-top:1px solid var(--accent);margin-top:10px;max-width:600px;color:var(--accent)}
+
+footer{padding:34px 0;font-size:14px;color:var(--mute);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink2);text-decoration:none}
+
+/* появление блоков при прокрутке; без JS всё видно сразу; при «уменьшить движение» в системе выключено */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+</style>
+<script>window.PALMAP={"--bg":"lbg","--bg2":"lbg2","--ink":"link","--ink2":"link2","--mute":"lmute","--line":"lline","--accent":"acc","--btn-ink":"btnink"};</script>
+<script src="../palette.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="mark"></span><span>Система Информационных Сервисов<small>разработка · обучение · продвижение</small></span></a>
+    <ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#how">Как работаем</a></li>
+      <li><a href="#why">Правила</a></li>
+      <li><a href="#cases">Работы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a class="phone" href="tel:+78120000000">+7 (812) [телефон]</a>
+    <a class="lk" href="#" title="Личный кабинет появится позже">Кабинет</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Разработка под задачу · Санкт-Петербург</div>
+    <h1>Опишите задачу. Решение сделаем мы.</h1>
+    <p class="lead">Мобильные приложения, сайты и боты для бизнеса. Срок и стоимость письменно до начала работ, один ответственный, результат по этапам.</p>
+    <form class="quick" onsubmit="return ok(this)">
+      <input type="text" name="c" placeholder="Телефон, почта или Telegram" required>
+      <button type="submit">Обсудить</button>
+    </form>
+    <div class="ok">Спасибо. Свяжемся в течение рабочего дня.</div>
+    <div class="note">Перезвоним в течение рабочего дня. Разговор и оценка бесплатны.</div>
+    <div class="alt">
+      <a href="tel:+78120000000">Позвонить</a>
+      <a href="https://t.me/[аккаунт]">Написать в Telegram</a>
+      <a href="mailto:[почта]">Написать на почту</a>
+    </div>
+    <div class="facts">
+      <div><b>Письменная оценка</b>срок и стоимость до начала работ</div>
+      <div><b>Договор и NDA</b>до того, как вы расскажете детали</div>
+      <div><b>Права на код</b>исходники принадлежат вам</div>
+      <div><b>Сопровождение</b>не исчезаем после запуска</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="h">
+      <div><div class="eyebrow">Что мы делаем</div><h2>Услуги</h2></div>
+      <p style="color:var(--ink2);max-width:560px">Берём задачу целиком: от разговора о бизнесе до запуска и поддержки. Если нужна только часть, делаем часть. Три направления, одна группа компаний.</p>
+    </div>
+    <div class="table" style="margin-top:40px">
+      <div class="tr"><div class="n">01</div><div><h3>Мобильные приложения</h3><div class="tag">Разработка</div></div><div class="d">iOS и Android. Приложение для клиентов, сотрудников или партнёров. Публикация в магазинах, обновления, поддержка.<small>Торговля, услуги, доставка, сервисные компании</small></div></div>
+      <div class="tr"><div class="n">02</div><div><h3>Сайты и веб-сервисы</h3><div class="tag">Разработка</div></div><div class="d">От витрины до личного кабинета с оплатой и интеграциями. Находится в поиске, обновляется без программиста.<small>Компании, которым сайт нужен как рабочий инструмент</small></div></div>
+      <div class="tr"><div class="n">03</div><div><h3>Боты и автоматизация</h3><div class="tag">Разработка</div></div><div class="d">Telegram и другие мессенджеры: приём заказов, запись, ответы на вопросы, уведомления. Связь с вашей учётной системой.<small>Те, кто отвечает клиентам вручную</small></div></div>
+      <div class="tr"><div class="n">04</div><div><h3>Обучение</h3><div class="tag">Обучение</div></div><div class="d">Курсы для сотрудников и для рынка по нашим рабочим правилам, с практикой. Готовим людей под конкретные задачи.<small>Компании, которым нужны кадры под свой порядок</small></div></div>
+      <div class="tr"><div class="n">05</div><div><h3>Сообщества и вовлечение</h3><div class="tag">Продвижение</div></div><div class="d">Собираем вокруг продукта людей, которым он нужен: мероприятия, площадки, обратная связь от живых пользователей.<small>Продукты, которым нужны первые пользователи</small></div></div>
+      <div class="tr"><div class="n">06</div><div><h3>Продвижение</h3><div class="tag">Продвижение</div></div><div class="d">Чтобы сделанное нашли: поиск, магазины приложений, реклама. Считаем деньги, а не просмотры.<small>Всё, что мы сделали, и не только</small></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <div class="wrap">
+    <div class="h" style="margin-bottom:40px">
+      <div><div class="eyebrow">Разделение труда</div><h2>Вам не нужно разбираться в технологиях</h2></div>
+    </div>
+    <div class="two">
+      <div><h3>Что делаете вы</h3><ol>
+        <li>Рассказываете, как устроен бизнес и что мешает</li>
+        <li>Отвечаете на вопросы на обследовании, один-два разговора</li>
+        <li>Смотрите результат на каждом этапе и говорите, что не так</li>
+        <li>Принимаете работу</li></ol></div>
+      <div><h3>Что делаем мы</h3><ol>
+        <li>Переводим задачу в требования понятным текстом</li>
+        <li>Называем срок и стоимость письменно и отвечаем за них</li>
+        <li>Проектируем, разрабатываем, проверяем, выпускаем</li>
+        <li>Сопровождаем после запуска и развиваем по заявкам</li></ol></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="h" style="margin-bottom:44px"><div><div class="eyebrow">Порядок работы</div><h2>Четыре шага</h2></div></div>
+    <div class="steps">
+      <div class="step"><h3>Разговор</h3><p>Полчаса о задаче. Говорим, что стоит делать, а что нет.</p><div class="t">Бесплатно, в день обращения</div></div>
+      <div class="step"><h3>Обследование и оценка</h3><p>Описание работ по этапам, срок и стоимость письменно.</p><div class="t">Несколько дней</div></div>
+      <div class="step"><h3>Разработка по этапам</h3><p>Каждый этап заканчивается показом работающего результата.</p><div class="t">Этапы по две-три недели</div></div>
+      <div class="step"><h3>Запуск и сопровождение</h3><p>Публикуем, обучаем ваших людей, остаёмся на связи.</p><div class="t">По договору сопровождения</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="h" style="margin-bottom:30px"><div><div class="eyebrow">Правила</div><h2>Что мы не нарушаем</h2></div></div>
+    <div class="why">
+      <div><b>Срок только после оценки</b><span>Никаких «примерно месяц» по телефону. За письменную оценку отвечает руководитель.</span></div>
+      <div><b>Один ответственный</b><span>Один человек на связи от первого разговора до сдачи, он знает проект целиком.</span></div>
+      <div><b>Результат каждые две-три недели</b><span>Не отчёт, а работающая часть продукта.</span></div>
+      <div><b>Код и права ваши</b><span>Исходники передаются по договору. Уйти можно в любой момент, всё продолжит работать.</span></div>
+      <div><b>Проверка отдельными людьми</b><span>Тестировщик не подчиняется программисту. Дефект важнее новой работы.</span></div>
+      <div><b>Всё письменно</b><span>Договорённости в задачах и письмах. Через год можно поднять, кто что решил.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="h" style="margin-bottom:44px"><div><div class="eyebrow">Работы</div><h2>Задачи, которые мы решали</h2></div></div>
+    <div class="cases">
+      <div class="case"><div class="img">[изображение кейса]</div><h3>[Название проекта]</h3><p>Задача: [что мешало]. Решение: [что сделали]. Результат: [цифра].</p><small>Мобильное приложение · [отрасль]</small></div>
+      <div class="case"><div class="img">[изображение кейса]</div><h3>[Название проекта]</h3><p>Задача: [что мешало]. Решение: [что сделали]. Результат: [цифра].</p><small>Сайт и личный кабинет · [отрасль]</small></div>
+      <div class="case"><div class="img">[изображение кейса]</div><h3>[Название проекта]</h3><p>Задача: [что мешало]. Решение: [что сделали]. Результат: [цифра].</p><small>Telegram-бот · [отрасль]</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Один шаг</div>
+    <h2>Опишите задачу своими словами</h2>
+    <p style="max-width:600px;color:var(--ink2)">Техническое задание не нужно. Две фразы: что за бизнес и что должно стать лучше. Остальное спросим сами.</p>
+    <form class="form" onsubmit="return ok(this)">
+      <input type="text" name="name" placeholder="Как к вам обращаться" required>
+      <input type="text" name="c" placeholder="Телефон, почта или Telegram" required>
+      <textarea name="task" placeholder="Что должно стать лучше (необязательно)"></textarea>
+      <div class="row"><button class="btn" type="submit">Отправить</button><small>Нажимая кнопку, вы соглашаетесь с <a href="#">политикой обработки данных</a>.</small></div>
+    </form>
+    <div class="ok">Спасибо. Мы получили заявку и свяжемся с вами в течение рабочего дня.</div>
+    <div class="contacts">
+      <div><small>Телефон</small><a href="tel:+78120000000">+7 (812) [телефон]</a></div>
+      <div><small>Почта</small><a href="mailto:[почта]">[почта]</a></div>
+      <div><small>Telegram</small><a href="https://t.me/[аккаунт]">@[аккаунт]</a></div>
+      <div><small>Офис</small><span>Санкт-Петербург, [адрес]</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>ООО «Система Информационных Сервисов» · ИНН [ИНН] · Санкт-Петербург<br>Входит в группу компаний [название группы]: разработка, обучение, продвижение.</div>
+    <div><a href="#">Политика обработки персональных данных</a><br><a href="#">Реквизиты</a></div>
+  </div>
+</footer>
+
+<script>
+function ok(f){var m=f.nextElementSibling;f.reset();m.style.display='block';return false}
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var sel='section .eyebrow,section h2,section > .wrap > p,.card,.row,.tr,.step,.why > div,.case,.box,.col,.two > div,.facts,.strip .wrap,.form,.panel,.contacts,.groups,.list,.table,.h';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(e){e.classList.add('rv')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){
+    var e=x.target,sib=[].slice.call(e.parentNode.children).filter(function(c){return c.classList.contains('rv')}),i=sib.indexOf(e);
+    e.style.transitionDelay=(Math.min(i,6)*70)+'ms';e.classList.add('in');io.unobserve(e)}})},{rootMargin:'0px 0px -8% 0px',threshold:.1});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
