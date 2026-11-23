@@ -255,7 +255,7 @@ h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acce
   };
   var rec={layers:1,bracket:1};
   var out="";
-  for(var k in L){
+  ['box','layers','nodes','bracket','mono','diag','text'].forEach(function(k){
     var m = L[k].svg===null ? '<div class="box">СИС</div>' : (L[k].svg? '<div class="mark">'+L[k].svg+'</div>' : '');
     var ms = L[k].svg===null ? '<div class="box">СИС</div>' : (L[k].svg? '<div class="mark">'+L[k].svg+'</div>' : '');
     out+='<div class="row">'+
@@ -265,7 +265,7 @@ h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acce
       '<div class="card dark"><div class="lg">'+m+'<div class="wm">Система Информационных Сервисов<small>разработка · обучение · продвижение</small></div></div>'+
       '<div class="lg sm">'+ms+'<div class="wm">Система Информационных Сервисов<small>разработка · обучение · продвижение</small></div></div>'+
       '<div class="note">То же на тёмном фоне.</div></div></div>';
-  }
+  });
   document.getElementById('sis').innerHTML=out;
 })();
 </script>
