@@ -51,8 +51,9 @@
     farv:   {name:"Фарватер",                        abbr:"Ф",    sub:"разработка · академия · сообщества", ooo:"Фарватер"},
     mast:   {name:"Мастерская кода",                 abbr:"МК",   sub:"разработка · академия · сообщества", ooo:"Мастерская кода"},
     chist:  {name:"Чистая работа",                   abbr:"ЧР",   sub:"разработка · академия · сообщества", ooo:"Чистая работа"},
-    cifu:   {name:"Цифровые услуги",                 abbr:"ЦУ",   sub:"разработка · обучение · продвижение", ooo:"Цифровые услуги"},
-    servo:  {name:"Сервосистемы",                    abbr:"СС",   sub:"разработка · обучение · продвижение", ooo:"Сервосистемы"}
+    infos:  {name:"Инфосервисы",                     abbr:"ИС",   sub:"разработка · обучение · продвижение", ooo:"Инфосервисы"},
+    nevinf: {name:"Невские инфосервисы",             abbr:"НИ",   sub:"разработка · обучение · продвижение", ooo:"Невские инфосервисы"},
+    locman: {name:"Инфолоцман",                      abbr:"ИЛ",   sub:"разработка · академия · сообщества", ooo:"Инфолоцман"}
   };
   window.SITE_LOGOS = L; window.SITE_PALETTES = M; window.SITE_NAMES = N;
   var css = '.pal-btn{position:fixed;right:14px;bottom:14px;z-index:60;width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,0,0,.25);background:rgba(255,255,255,.6);backdrop-filter:blur(6px);cursor:pointer;opacity:.35;transition:opacity .2s;display:grid;place-items:center;padding:0}'+
