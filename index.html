@@ -4,43 +4,481 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Витрина — варианты для обсуждения</title>
+<title>ИИ Системы — разработка приложений, сайтов и ботов</title>
+<meta name="description" content="Мобильные приложения, сайты и боты под задачу вашего бизнеса. Письменная оценка до начала работ, один ответственный, результат по этапам.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3Crect%20width='40'%20height='40'%20rx='7'%20fill='%232b1d16'/%3E%3Cg%20fill='%23f4efe6'%3E%3Crect%20x='8'%20y='10'%20width='3.6'%20height='20'/%3E%3Crect%20x='18.2'%20y='10'%20width='3.6'%20height='20'/%3E%3Cpath%20d='M11.6%2030v-6l6.6-14v6z'/%3E%3Cpath%20d='M21.8%2030v-6l6.6-14v6z'/%3E%3C/g%3E%3Crect%20x='28.4'%20y='10'%20width='3.6'%20height='20'%20fill='%23a8824f'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ИИ Системы — разработка приложений, сайтов и ботов">
+<meta property="og:description" content="Вы ставите задачу. Мы возвращаем решение. Письменная оценка до начала работ, один ответственный, результат по этапам.">
+<meta property="og:image" content="https://99snevidimtc.github.io/site-drafts/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#f4efe6;color:#2b1d16;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding:40px 20px 60px}
-h1{font-size:26px;margin:0 0 6px}
-p.m{color:#8a7768;margin:0 0 28px;font-size:15px}
-h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a8824f;margin:30px 0 10px}
-a.i{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;background:#fbf8f2;border:1px solid #d9cdbb;border-radius:6px;text-decoration:none;color:inherit;margin-bottom:10px}
-a.i:active{background:#ebe3d6}
-a.i b{display:block;font-size:17px}
-a.i span{display:block;color:#5a463b;font-size:14px}
-a.i i{font-style:normal;color:#a8824f;font-size:22px}
+:root{
+  --bg:#f4efe6; --bg2:#ebe3d6; --paper:#fbf8f2;
+  --ink:#2b1d16; --ink2:#5a463b; --mute:#8a7768;
+  --line:#d9cdbb; --accent:#a8824f; --accent2:#8b6a3c; --btn-ink:#fff;
+  --cta-bg:#231811; --cta-ink:#efe7da; --cta-mute:#a3917f; --cta-text:#cdbfae; --cta-input:#3a2a21; --cta-border:#5d4a3e;
+  --font-h:"Unbounded","Inter",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.num,.big{font-family:var(--font-h);font-weight:800;line-height:1;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6.2vw,82px);text-transform:uppercase;line-height:1;overflow-wrap:anywhere;letter-spacing:0;word-spacing:.18em}
+h2{font-size:clamp(28px,4.2vw,58px);text-transform:uppercase;line-height:1.02;overflow-wrap:anywhere;letter-spacing:0;word-spacing:.18em}
+h3{font-size:clamp(18px,1.6vw,22px);line-height:1.15;font-weight:800;letter-spacing:0;word-spacing:.08em}
+p{margin:0 0 1em}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;border:2px solid var(--accent);background:var(--accent);color:var(--btn-ink);padding:16px 30px;border-radius:4px;font-weight:700;text-decoration:none;cursor:pointer;font-size:16px;letter-spacing:.01em;transition:background .15s,border-color .15s,transform .15s;font-family:Inter,sans-serif}
+.btn:hover{background:var(--accent2);border-color:var(--accent2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--accent2);font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:24px;height:3px;background:var(--accent);display:inline-block}
+section{padding:100px 0}
+section + section{border-top:3px solid var(--ink)}
+section.alt{background:color-mix(in srgb,var(--bg2) 85%,var(--line))}
+html[data-grid=off] .hero::before{display:none}
+html[data-alt=off] section.alt{background:transparent}
+section.alt .card,section.alt .person,section.alt .case{background:var(--paper)}
+.lead{font-size:clamp(18px,1.5vw,22px);color:var(--ink2);max-width:720px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;min-height:74px;padding:8px 24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--font-h);font-size:17px;font-weight:800;letter-spacing:0;word-spacing:.08em;min-width:0}
+.logo > span:last-child{white-space:nowrap}
+.mark{width:40px;height:40px;border:2px solid var(--ink);display:grid;place-items:center;font-size:13px;letter-spacing:.06em;font-family:Inter,sans-serif;font-weight:800;flex:none}
+.logo small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0;font-size:15px;font-weight:600}
+.nav ul a{text-decoration:none;color:var(--ink2);white-space:nowrap;border-bottom:2px solid transparent;padding-bottom:2px;transition:border-color .15s,color .15s}
+.nav ul a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+.nav .phone{font-weight:800;text-decoration:none;white-space:nowrap;font-size:16px;margin-left:auto}
+.nav ul + .phone{margin-left:0}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:2px solid var(--ink);border-radius:4px;background:transparent;cursor:pointer;padding:0;flex:none;position:relative}
+.burger i,.burger::before,.burger::after{content:"";position:absolute;left:11px;right:11px;height:3px;background:var(--ink);transition:transform .25s,opacity .25s}
+.burger::before{top:12px}.burger i{top:19px}.burger::after{top:26px}
+.burger.open::before{transform:translateY(7px) rotate(45deg)}.burger.open i{opacity:0}.burger.open::after{transform:translateY(-7px) rotate(-45deg)}
+.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:3px solid var(--ink);padding:10px 24px 22px}
+.menu.open{display:block}
+.menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--font-h);font-weight:800;font-size:20px;text-transform:uppercase;word-spacing:.15em}
+.menu a.tel{font-family:Inter,sans-serif;text-transform:none;font-size:18px;border:0;padding-top:18px;color:var(--accent2)}
+@media(max-width:900px){.nav ul{display:none}.nav .phone{display:none}.burger{display:block}}
+@media(max-width:600px){.menu{padding:6px 16px 18px}}
+@media(max-width:600px){.logo > span:last-child{white-space:normal;font-size:14px;line-height:1.15}.logo small{font-size:9px}.nav{padding:8px 16px;gap:14px}.wrap{padding:0 16px}.nav .phone{font-size:14px}}
+
+/* hero */
+.hero{padding:clamp(70px,10vw,140px) 0 80px;position:relative;overflow:hidden}
+/* сетка модулей (кладка) справа на первом экране, растворяется к центру */
+.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:44%;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(0deg,transparent 0 22px,var(--bg) 22px 28px),repeating-linear-gradient(90deg,color-mix(in srgb,var(--line) 70%,var(--ink)) 0 22px,var(--bg) 22px 28px);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 40%,#000);mask-image:linear-gradient(90deg,transparent,#000 40%,#000)}
+.hero .wrap{position:relative}
+@media(max-width:900px){.hero::before{width:60%;opacity:.3}}
+.hero h1{max-width:1100px;margin-bottom:34px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{margin-bottom:40px}
+.hero .act{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero .act .tel{font-family:var(--font-h);font-weight:800;font-size:clamp(26px,3.2vw,44px);text-decoration:none;letter-spacing:0;border-bottom:4px solid var(--accent);line-height:1.1}
+.hero .act .btn{font-size:17px;padding:18px 32px}
+.hero .note{font-size:15px;color:var(--ink2);margin-top:18px}
+.hero .alt{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:15px;font-weight:600}
+.hero .alt a{color:var(--ink2)}
+@media(max-width:600px){.hero .act{gap:18px}.hero .act .btn{width:100%;text-align:center}}
+
+/* facts */
+.facts{border-top:3px solid var(--ink);padding:0;background:var(--paper)}
+.facts + section{border-top:3px solid var(--ink)}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.facts .wrap > div{padding:40px 28px 36px;border-left:1px solid var(--line)}
+.facts .wrap > div:first-child{border-left:0;padding-left:0}
+.facts .big{font-size:clamp(32px,4vw,62px);color:var(--ink);margin:0 0 8px;letter-spacing:-.03em}
+.facts .big i{font-style:normal;color:var(--accent)}
+.facts span{display:block;color:var(--ink2);font-size:16px;font-weight:600;line-height:1.35}
+@media(max-width:700px){.facts .wrap{grid-template-columns:1fr}.facts .wrap > div{border-left:0;padding:26px 0;border-top:1px solid var(--line)}.facts .wrap > div:first-child{border-top:0}}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--ink);padding:28px 26px 26px;border-radius:4px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,background .35s}
+.card .num{color:var(--accent);font-size:clamp(34px,3.4vw,48px);margin:0 0 18px;letter-spacing:-.03em}
+.card p{color:var(--ink2);font-size:16px;flex:1}
+.card .for{font-size:14px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
+@media(hover:hover) and (pointer:fine){
+  .card:hover{transform:scale(1.05) translateY(-6px);border-top-color:var(--accent);box-shadow:0 30px 60px -24px rgba(0,0,0,.35);z-index:2;position:relative}
+  .grid:hover .card:not(:hover){opacity:.6;transform:scale(.98)}
+}
+.card{transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s,box-shadow .45s,border-color .45s}
+.groups{margin-top:34px;display:flex;gap:24px;flex-wrap:wrap;font-size:15px;color:var(--ink2);font-weight:600}
+.groups b{color:var(--ink)}
+
+/* you / we */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.col h3{margin-bottom:18px;padding-bottom:12px;border-bottom:3px solid var(--ink);font-size:clamp(20px,2vw,26px)}
+.col ul{list-style:none;padding:0;margin:0}
+.col li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink2);font-size:16px}
+.col.we li::before{content:"";display:inline-block;width:24px;height:3px;background:var(--accent);margin-right:10px;vertical-align:middle}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.step{position:relative;padding-top:18px;border-top:3px solid var(--ink)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--font-h);font-weight:800;color:var(--accent);font-size:clamp(40px,4.4vw,64px);display:block;margin-bottom:12px;letter-spacing:-.03em;line-height:1}
+.step p{color:var(--ink2);font-size:16px}
+.step .t{font-size:13px;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+@media(max-width:800px){.why{grid-template-columns:1fr}}
+.why > div{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:84px 1fr;gap:16px;align-items:start}
+.why .n{font-family:var(--font-h);font-weight:800;color:var(--accent);font-size:clamp(34px,3.4vw,48px);line-height:.9;letter-spacing:-.03em}
+@media(max-width:600px){.why > div{grid-template-columns:64px 1fr}}
+.why b{display:block;margin-bottom:4px;font-size:18px}
+.why span{color:var(--ink2);font-size:16px}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:800px){.cases{grid-template-columns:1fr;max-width:520px}}
+.case{background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s,box-shadow .45s,border-color .45s;position:relative;cursor:pointer}
+.case .img{height:260px;background:var(--bg2);display:grid;place-items:center;overflow:hidden;position:relative}
+.case{display:flex;flex-direction:column}
+.case .b{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.case .b p{flex:1}
+.case .b small{color:var(--mute);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;display:block;margin-bottom:8px}
+.case .b p{color:var(--ink2);font-size:15px;margin:0}
+.case .b .res{display:block;margin-top:12px;font-weight:700;color:var(--ink);font-size:15px}
+.case .b .res::before{content:"";display:inline-block;width:24px;height:3px;background:var(--accent);margin-right:10px;vertical-align:middle}
+@media(hover:hover) and (pointer:fine){
+  .case:hover{transform:scale(1.05) translateY(-8px);box-shadow:0 30px 60px -20px rgba(0,0,0,.35);border-color:var(--accent);z-index:2}
+  .cases:hover .case:not(:hover){opacity:.55;transform:scale(.97)}
+}
+.case.on{transform:scale(1.04);box-shadow:0 30px 60px -20px rgba(0,0,0,.35);border-color:var(--accent);z-index:2}
+.cases.has-on .case:not(.on){opacity:.55}
+/* макеты устройств */
+.mock{color:var(--ink)}
+.ph{width:140px;height:280px;border:6px solid var(--ink);border-radius:26px;background:var(--paper);position:relative;overflow:hidden;transform:translateY(40px);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.case:hover .ph,.case.on .ph{transform:translateY(22px)}
+.ph .top{height:46px;background:var(--accent);display:flex;align-items:flex-end;padding:0 12px 10px}
+.ph .top i{width:60px;height:8px;background:rgba(255,255,255,.85);border-radius:4px;display:block}
+.ph .r{margin:12px 12px 0;height:36px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;gap:8px;padding:0 8px}
+.ph .r i{width:18px;height:18px;border-radius:50%;background:var(--line);display:block;flex:none}
+.ph .r b{height:7px;background:var(--line);border-radius:3px;display:block;width:60%}
+.ph .r.a{background:var(--ink)}
+.ph .r.a b{background:var(--paper);width:50%}
+.ph .fab{position:absolute;right:12px;bottom:14px;width:40px;height:40px;border-radius:50%;background:var(--accent)}
+.chat{width:82%;display:flex;flex-direction:column;gap:9px}
+.chat .m{max-width:78%;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.35;background:var(--paper);border:1px solid var(--line);color:var(--ink2)}
+.chat .m.me{align-self:flex-end;background:var(--accent);color:var(--btn-ink);border-color:var(--accent);border-bottom-right-radius:3px}
+.chat .m.bot{border-bottom-left-radius:3px}
+.chat .k{display:flex;gap:6px;flex-wrap:wrap}
+.chat .k span{font-size:11px;font-weight:700;border:1.5px solid var(--ink);padding:4px 9px;border-radius:14px;color:var(--ink);background:var(--paper)}
+.chat .k span.on{background:var(--ink);color:var(--paper)}
+.win{width:86%;height:200px;border:3px solid var(--ink);border-radius:8px;background:var(--paper);overflow:hidden;transform:translateY(34px);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.case:hover .win,.case.on .win{transform:translateY(18px)}
+.win .bar{height:22px;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:5px;padding:0 10px}
+.win .bar i{width:7px;height:7px;border-radius:50%;background:var(--line);display:block}
+.win .bar i:first-child{background:var(--accent)}
+.win .h{margin:14px 14px 0;height:14px;width:62%;background:var(--ink);border-radius:2px}
+.win .h2{margin:8px 14px 0;height:8px;width:45%;background:var(--line);border-radius:2px}
+.win .btns{margin:14px 14px 0;display:flex;gap:6px}
+.win .btns i{display:block;height:20px;width:64px;background:var(--accent);border-radius:3px}
+.win .btns i+i{background:transparent;border:2px solid var(--ink);width:56px}
+.win .cols{margin:16px 14px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.win .cols i{display:block;height:46px;background:var(--bg2);border-radius:3px}
+
+/* руководители */
+html[data-people=hide] .team{display:none}
+.team .people{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+@media(max-width:800px){.team .people{grid-template-columns:1fr}}
+.person{display:grid;grid-template-columns:180px 1fr;gap:26px;align-items:start;background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:4px;padding:26px}
+.person img{width:180px;height:220px;object-fit:cover;display:block;border-radius:4px;filter:saturate(.6) sepia(.22) contrast(1.04)}
+.person .q{font-size:17px;color:var(--ink2);margin:0 0 16px;line-height:1.5}
+.person b{display:block;font-family:var(--font-h);font-weight:800;font-size:20px;line-height:1.15;word-spacing:.08em}
+.person .r{display:block;color:var(--mute);font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin:6px 0 14px}
+.person .c a{display:inline-block;margin-right:18px;text-decoration:none;font-weight:700;border-bottom:2px solid var(--accent)}
+@media(max-width:560px){.person{grid-template-columns:1fr}.person img{width:100%;height:260px}}
+
+/* form */
+.cta{background:var(--cta-bg);color:var(--cta-ink);border-top:6px solid var(--accent)!important}
+.cta .eyebrow{color:var(--accent)}
+.cta h2{color:var(--cta-ink)}
+.cta p{color:var(--cta-text)}
+.trust{list-style:none;padding:0;margin:26px 0 0;display:flex;gap:10px 28px;flex-wrap:wrap;font-size:15px;font-weight:600;color:var(--cta-ink)}
+.trust li::before{content:"";display:inline-block;width:24px;height:3px;background:var(--accent);margin-right:10px;vertical-align:middle}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:28px}
+@media(max-width:640px){.form{grid-template-columns:1fr}}
+.form input,.form textarea{width:100%;font:inherit;font-size:16px;padding:14px;border:1px solid var(--cta-border);background:var(--cta-input);color:var(--cta-ink);border-radius:4px;outline:none}
+.form input::placeholder,.form textarea::placeholder{color:var(--cta-mute)}
+.form input:focus,.form textarea:focus{border-color:var(--accent)}
+.form textarea{grid-column:1/-1;min-height:110px;resize:vertical}
+.form .row{grid-column:1/-1;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.form .row small{color:var(--cta-mute);font-size:13px}
+.contacts{display:flex;gap:40px;flex-wrap:wrap;margin-top:40px;font-size:16px}
+.contacts a{color:var(--cta-ink);text-decoration:none;border-bottom:1px solid var(--cta-border);font-weight:600}
+.contacts small{display:block;color:var(--cta-mute);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+.ok{display:none;padding:18px;border:1px solid var(--accent);border-radius:4px;margin-top:16px;max-width:760px}
+
+footer{padding:34px 0;font-size:14px;color:var(--mute);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .wrap > div:first-child{max-width:72%}
+@media(max-width:700px){footer .wrap > div:first-child{max-width:100%}}
+footer a{color:var(--ink2);text-decoration:none}
+footer .grp{display:block;margin-top:8px;font-weight:600}
+footer .grp a{color:var(--ink);border-bottom:1px solid var(--accent)}
+
+/* появление блоков при прокрутке: снизу вверх с увеличением; без JS всё видно сразу; при «уменьшить движение» выключено */
+.js .rv{opacity:0;transform:translateY(56px) scale(.9);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.js h2.rv,.js .eyebrow.rv{transform:translateY(40px) scale(.96)}
+.js .hero .rv{transform:translateY(30px) scale(.98)}
+.js .rv.in,.js .hero .rv.in{opacity:1;transform:none}
+/* режим «при каждой прокрутке»: блок, ушедший с экрана, появляется заново; заголовки вспыхивают: вырастают на 6 % и садятся на место */
+html[data-anim=every].js .rv.out{transition:none}
+html[data-anim=every].js h2.rv.in,html[data-anim=every].js h1.rv.in,html[data-anim=every].js .big.rv.in{transition:none;transform-origin:0 50%;animation:flash 1.1s cubic-bezier(.16,1,.3,1) both}
+html[data-anim=every].js .num.rv.in{transition:none;transform-origin:0 50%;animation:flash 1.1s cubic-bezier(.16,1,.3,1) both}
+@keyframes flash{0%{opacity:0;transform:translateY(40px) scale(.94)}45%{opacity:1;transform:translateY(0) scale(1.06)}100%{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
 </style>
+
+<script>
+window.PALMAP={"--bg":"lbg","--bg2":"lbg2","--paper":"lpaper","--ink":"link","--ink2":"link2","--mute":"lmute","--line":"lline","--accent":"acc","--accent2":"acc2","--btn-ink":"btnink","--cta-bg":"dbg","--cta-ink":"dink","--cta-mute":"dmute","--cta-text":"dink2","--cta-input":"dpanel","--cta-border":"dline"};
+window.PALMAP_DARK={"--bg":"dbg","--bg2":"dbg2","--paper":"dpanel","--ink":"dink","--ink2":"dink2","--mute":"dmute","--line":"dline","--accent":"acc","--accent2":"acc2","--btn-ink":"btnink","--cta-bg":"dpanel","--cta-ink":"dink","--cta-mute":"dmute","--cta-text":"dink2","--cta-input":"dbg","--cta-border":"dline"};
+window.FONT_VAR="--font-h";
+window.TITLE_TAIL=" — разработка приложений, сайтов и ботов";
+</script>
+<script src="palette.js?v=202611251321"></script>
 </head>
 <body>
-<div class="wrap">
-  <h1>Витрина: варианты для обсуждения</h1>
-  <p class="m">Черновики. Контакты, адреса и кейсы стоят заглушками. Формы ничего не отправляют.<br>В каждом варианте гамма и логотип переключаются: полупрозрачная кнопка в правом нижнем углу (на компьютере также клавиша G).</p>
 
-  <h2>Построение страницы</h2>
-  <a class="i" href="v1-classic/"><div><b>1. Классика</b><span>бежевый фон, заголовки с засечками, карточки</span></div><i>→</i></a>
-  <a class="i" href="v2-dark/"><div><b>2. Тёмная</b><span>тёмно-коричневый фон, форма справа на первом экране</span></div><i>→</i></a>
-  <a class="i" href="v3-minimal/"><div><b>3. Минимал</b><span>почти белый, крупная типографика, много воздуха</span></div><i>→</i></a>
-  <a class="i" href="v4-grand/"><div><b>4. Представительский</b><span>первый экран во весь кадр, крупные номера разделов</span></div><i>→</i></a>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="mark">ИИ</span><span>ИИ Системы<small>разработка · обучение · продвижение</small></span></a>
+    <ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#how">Как работаем</a></li>
+      <li><a href="#why">Правила</a></li>
+      <li><a href="#cases">Работы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a class="phone" href="tel:+78123120101">+7 (812) 312-01-01</a>
+    <button class="burger" type="button" aria-label="Меню" onclick="menu()"><i></i></button>
+  </div>
+  <nav class="menu" id="menu">
+    <a href="#services">Услуги</a>
+    <a href="#how">Как работаем</a>
+    <a href="#why">Правила</a>
+    <a href="#cases">Работы</a>
+    <a href="#contact">Контакты</a>
+    <a class="tel" href="tel:+78123120101">+7 (812) 312-01-01</a>
+  </nav>
+</header>
 
-  <h2>Другая логика страницы</h2>
-  <a class="i" href="v5-dialog/"><div><b>5. Разговор</b><span>три вопроса вместо разделов: страница и есть первая консультация</span></div><i>→</i></a>
-  <a class="i" href="v6-situations/"><div><b>6. Ситуации</b><span>не услуги, а шесть проблем клиента: что сделаем, срок, результат</span></div><i>→</i></a>
-  <a class="i" href="v7-manifesto/"><div><b>7. Манифест</b><span>одно утверждение, шесть правил, подпись руководителя, телефон</span></div><i>→</i></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Разработка под задачу</div>
+    <h1>Вы ставите задачу.<br>Мы возвращаем <em>решение.</em></h1>
+    <p class="lead">Мобильные приложения, сайты и боты для бизнеса. Письменная оценка до начала работ, один ответственный за результат, показ по этапам.</p>
+    <div class="act">
+      <a class="tel" href="tel:+78123120101">+7 (812) 312-01-01</a>
+      <a class="btn" href="#contact">Обсудить задачу</a>
+    </div>
+    <div class="note">Полчаса разговора и письменная оценка бесплатны. Отвечаем в течение рабочего дня.</div>
+    <div class="alt">
+      <a href="https://t.me/iisys_dev">Написать в Telegram</a>
+      <a href="mailto:info@ii-sys.ru">info@ii-sys.ru</a>
+    </div>
+  </div>
+</section>
 
-  <h2>Логотип</h2>
-  <a class="i" href="logo/"><div><b>Варианты логотипа</b><span>знаки и словесные знаки для СИС, Дельно и Невской верфи</span></div><i>→</i></a>
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Что мы делаем</div>
+    <h2>Один подрядчик<br>на весь цифровой контур</h2>
+    <p class="lead">Берём задачу целиком: от разговора о бизнесе до запуска и поддержки. Если нужна только часть, делаем часть.</p>
+    <div class="grid" style="margin-top:40px">
+      <div class="card"><div class="num">01</div><h3>Мобильные приложения</h3><p>iOS и Android. Приложение для клиентов, для сотрудников, для партнёров. Публикация в магазинах и обновления.</p><div class="for">Для торговли, услуг, доставки, сервисных компаний</div></div>
+      <div class="card"><div class="num">02</div><h3>Сайты и веб-сервисы</h3><p>От витрины до личного кабинета с оплатой и интеграциями. Быстро открывается, находится в поиске, обновляется без программиста.</p><div class="for">Для компаний, которым нужен сайт как рабочий инструмент</div></div>
+      <div class="card"><div class="num">03</div><h3>Боты и автоматизация</h3><p>Telegram и другие мессенджеры: приём заказов, запись, ответы на вопросы, уведомления. Связываем с вашей учётной системой.</p><div class="for">Для тех, кто пока отвечает клиентам вручную</div></div>
+      <div class="card"><div class="num">04</div><h3>Обучение</h3><p>Курсы для сотрудников и для рынка: по нашим рабочим правилам, с практикой. Готовим людей под конкретные задачи.</p><div class="for">Для компаний, которым нужны кадры под свой порядок</div></div>
+      <div class="card"><div class="num">05</div><h3>Сообщества и вовлечение</h3><p>Собираем вокруг вашего продукта людей, которым он нужен: мероприятия, площадки, обратная связь.</p><div class="for">Для продуктов, которым нужны живые пользователи</div></div>
+      <div class="card"><div class="num">06</div><h3>Продвижение</h3><p>Чтобы сделанное нашли: поиск, магазины приложений, реклама. Считаем деньги, а не просмотры.</p><div class="for">Для наших продуктов и для сторонних</div></div>
+    </div>
+    <div class="groups"><span><b>Разработка</b> 01–03</span><span><b>Обучение</b> 04</span><span><b>Продвижение</b> 05–06</span><span style="color:var(--mute)">Три направления, одна группа компаний</span></div>
+  </div>
+</section>
 
-  <h2>Визитки</h2>
-  <a class="i" href="card/Визитки%20СиС.pdf"><div><b>СиС Разработка / Система Информационных Сервисов</b><span>два названия, два человека</span></div><i>→</i></a>
-  <a class="i" href="card/Визитки%20Дельно%20и%20Невская%20верфь.pdf"><div><b>Дельно / Невская верфь</b><span>два названия, два человека</span></div><i>→</i></a>
-  <a class="i" href="card/Визитки.pdf"><div><b>Три гаммы</b><span>сравнение цвета на визитке</span></div><i>→</i></a>
+<div class="facts">
+  <div class="wrap">
+    <div><div class="big">1</div><span>ответственный за ваш проект от первого разговора до сдачи</span></div>
+    <div><div class="big">3<i>&nbsp;нед.</i></div><span>максимальная длина этапа: результат показываем, а не описываем</span></div>
+    <div><div class="big">100<i>%</i></div><span>кода и прав на него принадлежат вам по договору</span></div>
+  </div>
 </div>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Разделение труда</div>
+    <h2>Вам не нужно разбираться в технологиях</h2>
+    <div class="split" style="margin-top:40px">
+      <div class="col you">
+        <h3>Что делаете вы</h3>
+        <ul>
+          <li>Рассказываете, как устроен ваш бизнес и что мешает</li>
+          <li>Отвечаете на вопросы на обследовании, один-два разговора</li>
+          <li>Смотрите результат на каждом этапе и говорите, что не так</li>
+          <li>Принимаете работу</li>
+        </ul>
+      </div>
+      <div class="col we">
+        <h3>Что делаем мы</h3>
+        <ul>
+          <li>Переводим задачу на язык требований и пишем их понятным текстом</li>
+          <li>Называем срок и стоимость письменно и отвечаем за них</li>
+          <li>Проектируем, разрабатываем, проверяем, выпускаем</li>
+          <li>Сопровождаем после запуска и развиваем по вашим заявкам</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">Порядок работы</div>
+    <h2>Четыре шага<br>от разговора до запуска</h2>
+    <div class="steps" style="margin-top:40px">
+      <div class="step"><h3>Разговор</h3><p>Полчаса о вашей задаче. Говорим, что можно сделать и что не нужно делать.</p><div class="t">Бесплатно, в день обращения</div></div>
+      <div class="step"><h3>Обследование и оценка</h3><p>Описываем, что будет сделано, по этапам. Срок и стоимость в письменном виде.</p><div class="t">Несколько дней</div></div>
+      <div class="step"><h3>Разработка по этапам</h3><p>Каждый этап заканчивается показом работающего результата. Меняете направление, пока не поздно.</p><div class="t">Этапы по две-три недели</div></div>
+      <div class="step"><h3>Запуск и сопровождение</h3><p>Публикуем, обучаем ваших людей, остаёмся на связи. Доработки по заявкам.</p><div class="t">По договору сопровождения</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Наши обязательства</div>
+    <h2>Правила, которые<br>мы соблюдаем</h2>
+    <div class="why" style="margin-top:28px">
+      <div><div class="n">01</div><div><b>Срок называем только после оценки</b><span>Никаких «примерно месяц» по телефону. Оценка письменная, за неё отвечает руководитель.</span></div></div>
+      <div><div class="n">02</div><div><b>Один ответственный</b><span>У вас один человек на связи от первого разговора до сдачи. Он знает ваш проект целиком.</span></div></div>
+      <div><div class="n">03</div><div><b>Результат видно каждые две-три недели</b><span>Не отчёт, а работающая часть продукта, которую можно потрогать.</span></div></div>
+      <div><div class="n">04</div><div><b>Код и права принадлежат вам</b><span>Исходники передаются по договору. Уйти от нас можно в любой момент, и всё продолжит работать.</span></div></div>
+      <div><div class="n">05</div><div><b>Качество проверяют отдельные люди</b><span>Тестировщик не подчиняется программисту. Найденный дефект имеет приоритет над новой работой.</span></div></div>
+      <div><div class="n">06</div><div><b>Всё письменно</b><span>Договорённости в задачах и письмах. Через год можно поднять, кто и что решил.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow">Работы</div>
+    <h2>Три задачи,<br>три решения</h2>
+    <div class="cases" style="margin-top:40px">
+      <div class="case">
+        <div class="img"><div class="mock ph"><div class="top"><i></i></div><div class="r"><i></i><b></b></div><div class="r a"><i style="background:var(--accent)"></i><b></b></div><div class="r"><i></i><b style="width:40%"></b></div><div class="r"><i></i><b style="width:70%"></b></div><div class="fab"></div></div></div>
+        <div class="b"><small>Мобильное приложение · медицина</small><h3>Запись и карта пациента для сети клиник</h3><p>Пациенты записывались по телефону, администраторы не успевали. Сделали приложение для iOS и Android: запись к врачу, напоминания, результаты анализов в телефоне.</p><span class="res">2 400 записей в месяц без единого звонка</span></div>
+      </div>
+      <div class="case">
+        <div class="img"><div class="mock chat"><div class="m bot">Здравствуйте! Что будем заказывать?</div><div class="k"><span class="on">Пицца</span><span>Напитки</span><span>Повторить заказ</span></div><div class="m me">Маргарита, большая, и две колы</div><div class="m bot">Готово. 1 290 ₽, доставка 40 минут. Оплатить картой?</div></div></div>
+        <div class="b"><small>Telegram-бот · доставка еды</small><h3>Приём заказов без оператора</h3><p>Заказы принимали в переписке вручную и теряли. Бот ведёт меню, корзину, оплату и статус заказа, передаёт заказы на кухню и в учётную систему.</p><span class="res">18 000 заказов без участия оператора</span></div>
+      </div>
+      <div class="case">
+        <div class="img"><div class="mock win"><div class="bar"><i></i><i></i><i></i></div><div class="h"></div><div class="h2"></div><div class="btns"><i></i><i></i></div><div class="cols"><i></i><i></i><i></i></div></div></div>
+        <div class="b"><small>Сайт и кабинет · оптовая торговля</small><h3>Каталог с ценами по договору</h3><p>Каждый заказ шёл через менеджера, прайс рассылали таблицей. Сделали сайт с каталогом и личным кабинетом: цены по договору клиента, заказ и документы без звонка.</p><span class="res">7 из 10 заказов оформляются без менеджера</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team alt" id="team">
+  <div class="wrap">
+    <div class="eyebrow">Кто отвечает</div>
+    <h2>Отвечаем<br>лично</h2>
+    <p class="lead">Не отдел продаж и не менеджер по работе с клиентами. По телефонам ниже отвечают эти два человека лично.</p>
+    <div class="people">
+      <div class="person"><img src="img/p1.jpg" alt=""><div><p class="q">«Любую заявку я читаю сам. Если задачу можно решить дешевле, чем вы думаете, или вообще не нужно решать программой, скажу об этом в первом разговоре.»</p><b>Андрей Соколов</b><span class="r">Генеральный директор</span><div class="c"><a href="tel:+79210000101">+7 921 000-01-01</a><a href="https://t.me/a_sokolov_ii">Telegram</a></div></div></div>
+      <div class="person"><img src="img/p2.jpg" alt=""><div><p class="q">«Я отвечаю за разработку: сроки, качество и порядок в команде. Письменная оценка, которую вы получите, подписана мной, и я за неё отвечаю.»</p><b>Павел Орлов</b><span class="r">Руководитель разработки</span><div class="c"><a href="tel:+79210000102">+7 921 000-01-02</a><a href="https://t.me/p_orlov_ii">Telegram</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Один шаг</div>
+    <h2>Опишите задачу<br>своими словами</h2>
+    <p style="max-width:640px">Не нужно техническое задание. Достаточно двух фраз: что у вас за бизнес и что должно стать лучше. Остальное спросим сами.</p>
+    <ul class="trust"><li>Договор и NDA до начала работ</li><li>Оценка письменно, срок после оценки</li><li>Код и права на него у вас</li></ul>
+    <form class="form" onsubmit="return ok(this)">
+      <input type="text" name="name" placeholder="Как к вам обращаться" required>
+      <input type="text" name="c" placeholder="Телефон, почта или Telegram" required>
+      <textarea name="task" placeholder="Что должно стать лучше (необязательно)"></textarea>
+      <div class="row"><button class="btn" type="submit">Получить оценку</button><small>Нажимая кнопку, вы соглашаетесь с <a href="#" style="color:var(--cta-text)">политикой обработки данных</a>.</small></div>
+    </form>
+    <div class="ok">Спасибо. Мы получили заявку и свяжемся с вами в течение рабочего дня.</div>
+    <div class="contacts">
+      <div><small>Телефон</small><a href="tel:+78123120101">+7 (812) 312-01-01</a></div>
+      <div><small>Почта</small><a href="mailto:info@ii-sys.ru">info@ii-sys.ru</a></div>
+      <div><small>Telegram</small><a href="https://t.me/iisys_dev">@iisys_dev</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>ООО «ИИ Системы» · Интеллектуальные Информационные Системы · ИНН 7800000000<br><span class="grp">Группа компаний ИИ: <a href="#">Разработка</a> · <a href="#">Академия</a> · <a href="#">Сообщества</a></span></div>
+    <div><a href="#">Политика обработки персональных данных</a><br><a href="#">Реквизиты</a></div>
+  </div>
+</footer>
+
+<script>
+function menu(on){var m=document.getElementById('menu'),b=document.querySelector('.burger');if(on===undefined)on=!m.classList.contains('open');m.classList.toggle('open',on);b.classList.toggle('open',on)}
+document.addEventListener('click',function(e){if(e.target.closest('#menu a'))menu(false)});
+function ok(f){var m=f.parentNode.querySelector('.ok')||document.querySelector('.ok');f.reset();m.style.display='block';m.scrollIntoView({block:'nearest'});return false}
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var sel='.hero .eyebrow,.hero h1,.hero .lead,.hero .act,.hero .note,.hero .alt,.facts > .wrap > div,section .eyebrow,section h2,section > .wrap > .lead,section > .wrap > p,.person,.trust,.card,.step,.why > div,.case,.col,.form,.contacts,.groups';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(e){e.classList.add('rv')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  /* режим задаёт панель (palette.js): data-anim="every" — заново при каждом появлении, "once" — один раз */
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){
+    var e=x.target, every=document.documentElement.dataset.anim!=='once';
+    if(x.isIntersecting){
+      var sib=[].slice.call(e.parentNode.children).filter(function(c){return c.classList.contains('rv')}),i=sib.indexOf(e);
+      e.classList.remove('out');
+      e.style.transitionDelay=(Math.min(i,6)*90)+'ms'; e.style.animationDelay=e.style.transitionDelay;
+      e.classList.add('in');
+      if(!every) io.unobserve(e);
+      setTimeout(function(){e.style.transitionDelay='0ms'},1600);
+    } else if(every && e.classList.contains('in')){
+      /* ушёл с экрана целиком: сбросить без анимации, чтобы появиться заново */
+      e.classList.add('out'); e.classList.remove('in'); e.style.animationDelay='0ms';
+    }
+  })},{rootMargin:'0px 0px -6% 0px',threshold:0});
+  els.forEach(function(e){io.observe(e)});
+
+  /* на устройствах без наведения (планшет, телефон) карточка работы раскрывается касанием */
+  var cs=document.querySelector('.cases');
+  if(cs && !(window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches)){
+    cs.addEventListener('click',function(ev){var c=ev.target.closest('.case');if(!c)return;var on=c.classList.contains('on');
+      cs.querySelectorAll('.case').forEach(function(x){x.classList.remove('on')});
+      if(!on){c.classList.add('on')} cs.classList.toggle('has-on',!on)});
+  }
+})();
+</script>
 </body>
 </html>
